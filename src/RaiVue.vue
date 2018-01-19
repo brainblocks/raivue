@@ -1,9 +1,6 @@
 <template>
   <div class="raivue">
-    <h1 class="raivue__title">RaiVue World!</h1>
-    <span>addr: {{address}}</span>
-    <span>amt: {{amount}}</span>
-    <div id="raiblocks-button"></div>
+    <div id="raivue__button"></div>
   </div>
 </template>
 
@@ -11,7 +8,22 @@
 import * as brainblocks from '../lib/brainblocks/dist/brainblocks'
 
 export default {
-  props: ['address', 'amount', 'onSuccess'],
+  props: {
+    address: {
+      type: String,
+      required: true
+    },
+    amount: {
+      type: Number,
+      default: 1
+    },
+    onSuccess: {
+      type: Function,
+      default: function (data) {
+        console.log('Payment successful!', data)
+      }
+    }
+  },
   mounted () {
     const _this = this
     setTimeout(function () {
@@ -23,15 +35,13 @@ export default {
       brainblocks.Button.render({
         // Pass in payment options
         payment: {
-          destination: 'xrb_164xaa1ojy6qmq9e8t94mz8izr4mkf1sojb6xrmstru5jsif48g5kegcqg7y',
+          destination: this.address,
           currency: 'rai',
-          amount: 1000
+          amount: this.amount
         },
         // Handle successful payments
-        onPayment: function (data) {
-          console.log('Payment successful!', data)
-        }
-      }, '#raiblocks-button')
+        onPayment: this.onSuccess
+      }, '#raivue__button')
     }
   }
 }
