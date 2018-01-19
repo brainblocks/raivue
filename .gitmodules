@@ -1,0 +1,3 @@
+[submodule "lib/brainblocks"]
+	path = lib/brainblocks
+	url = https://github.com/brainblocks/brainblocks.git
