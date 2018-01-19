@@ -2,7 +2,7 @@
   "name": "raivue",
   "version": "0.0.1",
   "description": "A Vue.js plugin for accepting RaiBlocks payments using Brainblocks",
-  "author": "Joshua Porter <joshporter1@gmail.com>",
+  "author": "Josh Porter <joshporter1@gmail.com>",
   "main": "dist/raivue.common.js",
   "module": "dist/raivue.esm.js",
   "browser": "dist/raivue.js",
@@ -132,8 +132,5 @@
     "url": "https://github.com/joshporter1/raivue/issues"
   },
   "homepage": "https://github.com/joshporter1/raivue#readme",
-  "license": {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/mit-license.php"
-  }
+  "license": "MIT"
 }
