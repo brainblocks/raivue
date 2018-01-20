@@ -42,7 +42,7 @@ Vue.use(Raivue)
 
 ### Vue Component
 ```html
-<RaiVue address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i" :amount="250000"></RaiVue>
+<RaiPayment address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i" :amount="250000"></RaiPayment>
 ```
 
 ## Development

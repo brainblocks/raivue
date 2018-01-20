@@ -1,7 +1,7 @@
-import RaiVue from './RaiVue.vue'
+import RaiPayment from './RaiPayment.vue'
 
 function install (Vue) {
-  Vue.component(RaiVue.name, RaiVue)
+  Vue.component(RaiPayment.name, RaiPayment)
 }
 
 // Install by default if using the script tag
@@ -13,6 +13,6 @@ export default install
 // const version = '__VERSION__'
 // // Export all components too
 // export {
-//   RaiVue,
+//   RaiPayment,
 //   version
 // }
