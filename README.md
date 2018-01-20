@@ -22,7 +22,7 @@ yarn add raivue
 import Vue from 'vue'
 import Raivue from 'raivue'
 // You need a specific loader for CSS files like https://github.com/webpack/css-loader
-import 'raivue/dist/raivue.css'
+// import 'raivue/dist/raivue.css'
 
 Vue.use(Raivue)
 ```
@@ -40,7 +40,18 @@ Vue.use(Raivue)
 <script src="https://unpkg.com/raivue"></script>
 ```
 
+### Vue Component
+```html
+<RaiVue address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i" :amount="250000"></RaiVue>
+```
+
 ## Development
+
+### Updating Git Submodules
+This is required to pull down the latest Brainblocks code.
+```bash
+npm run submodules:update
+```
 
 ### Launch visual tests
 
