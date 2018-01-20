@@ -7,7 +7,11 @@
 ## Installation
 
 ```bash
+# npm
 npm install --save raivue
+
+# yarn
+yarn add raivue
 ```
 
 ## Usage

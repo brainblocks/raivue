@@ -8,6 +8,7 @@
 import * as brainblocks from '../lib/brainblocks/dist/brainblocks'
 
 export default {
+  name: 'RaiVue',
   props: {
     address: {
       type: String,

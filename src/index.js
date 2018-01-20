@@ -1,15 +1,15 @@
 import RaiVue from './RaiVue.vue'
 
-function Raivue (Vue) {
-  Vue.component('raivue', RaiVue)
+function install (Vue) {
+  Vue.component(RaiVue.name, RaiVue)
 }
 
 // Install by default if using the script tag
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(Raivue)
+  window.Vue.use(install)
 }
 
-export default Raivue
+export default install
 // const version = '__VERSION__'
 // // Export all components too
 // export {

@@ -1,6 +1,6 @@
 /*!
  * raivue v0.0.1
- * (c) 2018 Joshua Porter
+ * (c) 2018 Josh Porter
  * Released under the MIT License.
  */
 
@@ -7589,6 +7589,7 @@ var brainblocks = createCommonjsModule(function (module, exports) {
 unwrapExports(brainblocks);
 
 var RaiVue = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)},staticRenderFns: [function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"raivue"},[_c('div',{attrs:{"id":"raivue__button"}})])}],
+  name: 'RaiVue',
   props: {
     address: {
       type: String,
@@ -7627,17 +7628,21 @@ var RaiVue = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_
   }
 };
 
-function plugin (Vue) {
-  Vue.component('raivue', RaiVue);
+function install (Vue) {
+  Vue.component(RaiVue.name, RaiVue);
 }
 
 // Install by default if using the script tag
 if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(plugin);
+  window.Vue.use(install);
 }
 
-var version = '0.0.1';
 
-exports['default'] = plugin;
-exports.RaiVue = RaiVue;
-exports.version = version;
+// const version = '0.0.1'
+// // Export all components too
+// export {
+//   RaiVue,
+//   version
+// }
+
+exports['default'] = install;
