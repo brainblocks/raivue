@@ -10,8 +10,7 @@
   "style": "dist/raivue.css",
   "files": [
     "dist",
-    "src",
-    "lib"
+    "src"
   ],
   "scripts": {
     "clean": "rimraf dist",
@@ -30,7 +29,8 @@
     "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run",
     "dev": "webpack-dashboard -- webpack-dev-server --config build/webpack.config.dev.js --open",
     "dev:coverage": "cross-env BABEL_ENV=test karma start test/karma.conf.js",
-    "prepare": "yon run build"
+    "prepare": "npm run submodules:update && yon run build",
+    "submodules:update": "git submodule update --init --recursive"
   },
   "lint-staged": {
     "*.{vue,jsx,js}": [
