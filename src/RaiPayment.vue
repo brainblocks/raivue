@@ -1,7 +1,5 @@
 <template>
-  <div class="raivue">
-    <div id="raivue__button"></div>
-  </div>
+  <div class="raivue__payment" :id="id"></div>
 </template>
 
 <script>
@@ -25,7 +23,23 @@ export default {
       }
     }
   },
+  data () {
+    return {
+      id: null
+    }
+  },
+  watch: {
+    amount () {
+      this.reset()
+      this.initialize()
+    },
+    address () {
+      this.reset()
+      this.initialize()
+    }
+  },
   mounted () {
+    this.id = 'raivue__payment-' + this._uid
     const _this = this
     setTimeout(function () {
       _this.initialize()
@@ -42,7 +56,10 @@ export default {
         },
         // Handle successful payments
         onPayment: this.onSuccess
-      }, '#raivue__button')
+      }, '#' + this.id)
+    },
+    reset () {
+      document.getElementById(this.id).innerHTML = ''
     }
   }
 }

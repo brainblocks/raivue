@@ -7,7 +7,7 @@ describe('RaiPayment.vue', function () {
 <RaiPayment address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i" :amount="250000"></RaiPayment>
 `, { components: { RaiPayment }})
     setTimeout(function () {
-      vm.$el.querySelector('#raivue__button').children.length.should.equal(1)
+      vm.$el.querySelector('.raivue__payment').children.length.should.equal(1)
     }, 1000)
   })
 })
