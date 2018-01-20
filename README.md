@@ -47,7 +47,7 @@ Vue.use(Raivue)
 
 ## Development
 
-### Updating Git Submodules
+### Update Git Submodules
 This is required to pull down the latest Brainblocks code.
 ```bash
 npm run submodules:update
@@ -76,7 +76,7 @@ npm run build
 
 ## Publishing
 
-The `prepublish` hook will ensure dist files are created before publishing. This
+The `prepare` hook will ensure dist files are created before publishing. This
 way you don't need to commit them in your repository.
 
 ```bash
