@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/raivue.svg)](https://www.npmjs.com/package/raivue) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-> A Vue.js plugin for accepting RaiBlocks payments using Brainblocks
+> A Vue.js plugin for accepting RaiBlocks payments using [Brainblocks](https://brainblocks.io/)
 
 ## Installation
 
@@ -92,3 +92,7 @@ npm publish
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+
+## Support 💙💚
+Donation Address: xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i
