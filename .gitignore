@@ -3,6 +3,5 @@ node_modules/
 npm-debug.log
 test/coverage
 test/dist
-dist
 yarn-error.log
 reports
