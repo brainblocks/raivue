@@ -42,7 +42,13 @@ Vue.use(Raivue)
 
 ### Vue Component
 ```html
-<RaiPayment address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i" :amount="250000"></RaiPayment>
+<!-- amount must use v-bind(colon is shorthand) to pass as a Number -->
+<!-- amount is in rai, not XRB. -->
+
+<RaiPayment
+    address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i"
+    :amount="250000">
+</RaiPayment>
 ```
 
 ## Development
