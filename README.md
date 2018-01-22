@@ -40,15 +40,29 @@ Vue.use(Raivue)
 <script src="https://unpkg.com/raivue"></script>
 ```
 
-### Vue Component
+### Vue Component Usage
 ```html
 <!-- amount must use v-bind(colon is shorthand) to pass as a Number -->
 <!-- amount is in rai, not XRB. -->
-
-<RaiPayment
-    address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i"
-    :amount="250000">
-</RaiPayment>
+<template>
+  <div>
+    <RaiPayment
+      address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i"
+      :amount="250000"
+      :onSuccess="successCallback">
+    </RaiPayment>
+  </div>
+</template>
+<script>
+  export default {
+    name: 'RaivueTest',
+    methods: {
+      successCallback (data) {
+        console.log('Payment successful!', data.token)
+      }
+    }
+  }
+</script>
 ```
 
 ## Development
