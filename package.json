@@ -1,6 +1,6 @@
 {
   "name": "raivue",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Vue.js plugin for accepting RaiBlocks payments using Brainblocks",
   "author": "Josh Porter <joshporter1@gmail.com>",
   "keywords": ["raiblocks", "brainblocks", "vuejs", "vue", "vue-plugin"],
@@ -121,12 +121,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joshporter1/raivue.git"
+    "url": "git+https://github.com/brainblocks/raivue.git"
   },
   "bugs": {
-    "url": "https://github.com/joshporter1/raivue/issues"
+    "url": "https://github.com/brainblocks/raivue/issues"
   },
-  "homepage": "https://github.com/joshporter1/raivue#readme",
+  "homepage": "https://github.com/brainblocks/raivue#readme",
   "license": "Apache 2.0",
   "dependencies": {}
 }
