@@ -1,5 +1,5 @@
 /*!
- * raivue v0.1.0
+ * raivue v0.1.1
  * (c) 2018 Josh Porter
  * Released under the MIT License.
  */
