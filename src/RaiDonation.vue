@@ -1,12 +1,14 @@
 <template>
   <div class="raivue__donation" :id="id">
     <div class="raivue__donation_custom">
-      {{label}}
-      <select v-model="currency">
+      <span class="label">
+        {{label}}
+      </span>
+      <input type="text" v-model.number="amount" class="raivue__donation_input">
+      <select v-model="currency" class="raivue__donation_select">
         <option value="xrb">XRB</option>
         <option value="rai">Rai</option>
       </select>
-      <input type="text" v-model.number="amount">
     </div>
     <!-- <div class="raivue__donations">
       <div role="button" class="raivue__donation_button" v-for="(donation,key) in donations" :key="key" v-on:click="amount = donation">
@@ -32,6 +34,10 @@ export default {
   name: 'RaiDonation',
   components: { RaiPayment },
   props: {
+    label: {
+      type: String,
+      default: 'Donate'
+    },
     address: {
       type: String,
       required: true
@@ -46,7 +52,6 @@ export default {
   data () {
     return {
       id: null,
-      label: 'Donate',
       currency: 'rai',
       amount: 1,
       donations: [1, 3, 5, 10]
@@ -68,34 +73,60 @@ export default {
 </script>
 
 <style>
-.raivue__donations {
-  display: flex;
-  flex-direction: horizontal;
-  justify-content: space-between;
+.raivue__donation {
   width: 300px;
-  margin-bottom: 10px;
-}
-
-.raivue__donation_button {
   display: inline-block;
   height: 50px;
-  background-color: #eee;
   border-radius: 5px;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 50px;
-  color: #1a3238;
+  color: #1A3238;
   cursor: pointer;
   font-size: 14px;
   text-align: center;
-  min-width: 50px;
 }
 
-.raivue__donation_button_content {
+.raivue__donation_custom > span.label {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.raivue__donation_button_content,
+.raivue__donation_custom {
   width: 100%;
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.raivue__donation_input,
+.raivue__donation_select {
+  padding: .5em .6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  height: 35px;
+}
+
+.raivue__donation_input {
+  width: 100%;
+  flex: 1;
+}
+.raivue__donation_select {
+  display: block;
+  margin: .25em 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-left: 5px;
 }
 </style>
