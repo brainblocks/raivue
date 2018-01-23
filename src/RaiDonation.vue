@@ -80,14 +80,14 @@ export default {
   border-radius: 5px;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 50px;
-  color: #1A3238;
+  color: #1a3238;
   cursor: pointer;
   font-size: 14px;
   text-align: center;
 }
 
 .raivue__donation_custom > span.label {
-  padding: 10px;
+  padding: 0 0.4em;
   font-size: 16px;
   font-weight: 100;
 }
@@ -95,7 +95,6 @@ export default {
 .raivue__donation_button_content,
 .raivue__donation_custom {
   width: 100%;
-  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -104,7 +103,7 @@ export default {
 
 .raivue__donation_input,
 .raivue__donation_select {
-  padding: .5em .6em;
+  padding: 0.5em 0.6em;
   display: inline-block;
   border: 1px solid #ccc;
   box-shadow: inset 0 1px 3px #ddd;
@@ -122,9 +121,10 @@ export default {
   width: 100%;
   flex: 1;
 }
+
 .raivue__donation_select {
   display: block;
-  margin: .25em 0;
+  margin: 0.25em 0;
   border: 1px solid #ccc;
   background-color: #fff;
   margin-left: 5px;
