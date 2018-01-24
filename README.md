@@ -41,14 +41,17 @@ Vue.use(Raivue)
 ```
 
 ### Vue Component Usage
+
+#### RaiPayment Component
+
+The RaiPayment component is the most basic usage of BrainBlocks. It takes in 3 properties: address, amount (in rai/xrb, not XRB), and an onSuccess callback function.
+
 ```html
-<!-- amount must use v-bind(colon is shorthand) to pass as a Number -->
-<!-- amount is in rai, not XRB. -->
 <template>
   <div>
     <RaiPayment
-      address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i"
-      :amount="250000"
+      :address="address"
+      :amount="amount"
       :onSuccess="successCallback">
     </RaiPayment>
   </div>
@@ -56,6 +59,12 @@ Vue.use(Raivue)
 <script>
   export default {
     name: 'RaivueTest',
+    data () {
+      return {
+        address: "xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i",
+        amount: 250000
+      }
+    }
     methods: {
       successCallback (data) {
         console.log('Payment successful!', data.token)
@@ -64,6 +73,40 @@ Vue.use(Raivue)
   }
 </script>
 ```
+
+#### RaiDonation
+
+The RaiDonation component provides a basic interface for users to specific the amount to display in the RaiPayment component.
+
+```html
+<template>
+  <div>
+    <RaiDonation
+      :label="label"
+      :address="address"
+      :onSuccess="successCallback">
+    </RaiDonation>
+  </div>
+</template>
+<script>
+  export default {
+    name: 'RaivueTest',
+    data () {
+      return {
+        label: "Donate",
+        address: "xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i",
+      }
+    }
+    methods: {
+      successCallback (data) {
+        console.log('Payment successful!', data.token)
+      }
+    }
+  }
+</script>
+```
+
+![Alt text](img/raivue-components.png?raw=true "RaiVue Component Examples Screenshot")
 
 ## Development
 
