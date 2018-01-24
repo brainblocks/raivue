@@ -1,7 +1,9 @@
 import RaiPayment from './RaiPayment.vue'
+import RaiDonation from './RaiDonation.vue'
 
 function install (Vue) {
   Vue.component(RaiPayment.name, RaiPayment)
+  Vue.component(RaiDonation.name, RaiDonation)
 }
 
 // Install by default if using the script tag

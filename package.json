@@ -1,6 +1,6 @@
 {
   "name": "raivue",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Vue.js plugin for accepting RaiBlocks payments using Brainblocks",
   "author": "Josh Porter <joshporter1@gmail.com>",
   "keywords": ["raiblocks", "brainblocks", "vuejs", "vue", "vue-plugin"],
