@@ -19,7 +19,7 @@ export default {
     onSuccess: {
       type: Function,
       default: function (data) {
-        console.log('Payment successful!', data)
+        console.log('RaiPayment successful!', data)
       }
     }
   },
