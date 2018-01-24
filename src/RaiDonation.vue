@@ -10,19 +10,15 @@
         <option value="rai">Rai</option>
       </select>
     </div>
-    <!-- <div class="raivue__donations">
-      <div role="button" class="raivue__donation_button" v-for="(donation,key) in donations" :key="key" v-on:click="amount = donation">
-        <div class="raivue__donation_button_content">
-          ${{donation}}
-        </div>
-      </div>
-      <div role="button" class="raivue__donation_button">
-        <div class="raivue__donation_button_content">
-          {{amount}}
-        </div>
-      </div>
-    </div> -->
-    <RaiPayment address="xrb_3ui4sg4jjdxsfwshjcbkjnthdzmtbgxe7pa597cxsa4aamkkj3b8dmeome4i" :amount="raiAmount"></RaiPayment>
+    <RaiPayment
+      v-if="validAmount"
+      :address="address"
+      :amount="raiAmount"
+      :onSuccess="onSuccess">
+    </RaiPayment>
+    <div class="raivue__error" v-else>
+      Amount 0.000001 and 5 XRB.
+    </div>
   </div>
 </template>
 
@@ -30,7 +26,6 @@
 import RaiPayment from './RaiPayment'
 
 export default {
-
   name: 'RaiDonation',
   components: { RaiPayment },
   props: {
@@ -45,29 +40,36 @@ export default {
     onSuccess: {
       type: Function,
       default: function (data) {
-        console.log('Payment successful!', data)
+        console.log('RaiDonation successful!', data)
       }
     }
   },
   data () {
     return {
       id: null,
-      currency: 'rai',
-      amount: 1,
+      currency: 'xrb',
+      amount: 0.25,
       donations: [1, 3, 5, 10]
     }
   },
   computed: {
     raiAmount () {
+      if (this.amount === '') { return 1 } // set to 1 rai when blank
       if (this.currency === 'xrb') {
         return this.amount * 1000000
       } else {
         return this.amount
       }
+    },
+    validAmount () {
+      if (this.raiAmount > 0 && this.raiAmount <= 5000000) { return true }
     }
   },
   mounted () {
     this.id = 'raivue__donation-' + this._uid
+  },
+  methods: {
+    testSuccess (data) { console.log(data) }
   }
 }
 </script>
@@ -127,6 +129,21 @@ export default {
   margin: 0.25em 0;
   border: 1px solid #ccc;
   background-color: #fff;
-  margin-left: 5px;
+  margin-left: 0.4em;
+}
+
+.raivue__error {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(255, 159, 159);
+  border-radius: 5px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 50px;
+  color: #1a3238;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  transition: height 0.5s ease-in-out;
 }
 </style>
