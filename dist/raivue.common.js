@@ -1,5 +1,5 @@
 /*!
- * raivue v0.1.1
+ * raivue v0.1.3
  * (c) 2018 Josh Porter
  * Released under the MIT License.
  */
@@ -7653,7 +7653,7 @@ exports.default = {
     onSuccess: {
       type: Function,
       default: function _default(data) {
-        console.log('Payment successful!', data);
+        console.log('RaiPayment successful!', data);
       }
     }
   },
