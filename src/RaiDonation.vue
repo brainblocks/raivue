@@ -78,14 +78,17 @@ export default {
 .raivue__donation {
   width: 300px;
   display: inline-block;
-  height: 50px;
   border-radius: 5px;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 50px;
   color: #1a3238;
+  background: #fff;
   cursor: pointer;
   font-size: 14px;
   text-align: center;
+  padding: 5px;
+  height: 100px;
+  border: 1px solid #ccc;
 }
 
 .raivue__donation_custom > span.label {
