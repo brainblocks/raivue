@@ -8,7 +8,6 @@
 .raivue__donation {
   width: 300px;
   display: inline-block;
-  height: 50px;
   border-radius: 5px;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 50px;
@@ -18,8 +17,9 @@
   font-size: 14px;
   text-align: center;
   padding: 5px;
-  height: 100px;
+  min-height: 100px;
   border: 1px solid #ccc;
+  box-sizing: content-box;
 }
 .raivue__donation_custom > span.label {
   padding: 0 0.4em;
@@ -70,6 +70,8 @@
   border: 1px solid #ccc;
   background-color: #fff;
   margin-left: 0.4em;
+  -moz-appearance: menulist;
+  -webkit-appearance: menulist;
 }
 .raivue__error {
   display: inline-block;
@@ -83,5 +85,5 @@
   cursor: pointer;
   font-size: 14px;
   text-align: center;
-  transition: height 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }

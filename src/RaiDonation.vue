@@ -87,8 +87,9 @@ export default {
   font-size: 14px;
   text-align: center;
   padding: 5px;
-  height: 100px;
+  min-height: 100px;
   border: 1px solid #ccc;
+  box-sizing: content-box;
 }
 
 .raivue__donation_custom > span.label {
@@ -133,6 +134,8 @@ export default {
   border: 1px solid #ccc;
   background-color: #fff;
   margin-left: 0.4em;
+  -moz-appearance: menulist;
+  -webkit-appearance: menulist;
 }
 
 .raivue__error {
@@ -147,6 +150,6 @@ export default {
   cursor: pointer;
   font-size: 14px;
   text-align: center;
-  transition: height 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 </style>
