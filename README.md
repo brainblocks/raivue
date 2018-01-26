@@ -22,7 +22,7 @@ yarn add raivue
 import Vue from 'vue'
 import Raivue from 'raivue'
 // You need a specific loader for CSS files like https://github.com/webpack/css-loader
-// import 'raivue/dist/raivue.css'
+import 'raivue/dist/raivue.css'
 
 Vue.use(Raivue)
 ```
