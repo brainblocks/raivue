@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/raivue.svg)](https://www.npmjs.com/package/raivue) [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 
-> A Vue.js plugin for accepting RaiBlocks payments using [Brainblocks](https://brainblocks.io/)
+> A Vue.js plugin for accepting Nano payments using [Brainblocks](https://brainblocks.io/)
 
 ## Installation
 
