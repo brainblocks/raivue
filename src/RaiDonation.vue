@@ -121,6 +121,8 @@ export default {
   letter-spacing: 0.01em;
   text-transform: none;
   height: 35px;
+  color: #1a3238;
+  background: #fff;
 }
 
 .raivue__donation_input {
@@ -132,7 +134,8 @@ export default {
   display: block;
   margin: 0.25em 0;
   border: 1px solid #ccc;
-  background-color: #fff;
+  color: #1a3238;
+  background: #fff;
   margin-left: 0.4em;
   -moz-appearance: menulist;
   -webkit-appearance: menulist;
