@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .raivue__donation {
   width: 300px;
   display: inline-block;
