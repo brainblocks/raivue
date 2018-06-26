@@ -1,9 +1,7 @@
-import RaiPayment from './RaiPayment.vue'
-import RaiDonation from './RaiDonation.vue'
+import NanoPayment from './NanoPayment.vue'
 
 function install (Vue) {
-  Vue.component(RaiPayment.name, RaiPayment)
-  Vue.component(RaiDonation.name, RaiDonation)
+  Vue.component(NanoPayment.name, NanoPayment)
 }
 
 // Install by default if using the script tag
@@ -12,9 +10,3 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default install
-// const version = '__VERSION__'
-// // Export all components too
-// export {
-//   RaiPayment,
-//   version
-// }

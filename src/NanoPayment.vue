@@ -1,25 +1,35 @@
 <template>
-  <div class="raivue__payment" :id="id"></div>
+  <div class="nanovue__payment" :id="id"></div>
 </template>
 
 <script>
 import * as brainblocks from '../lib/brainblocks/dist/brainblocks'
 
 export default {
-  name: 'RaiPayment',
+  name: 'nanoPayment',
   props: {
     address: {
       type: String,
       required: true
     },
+    currency: {
+      type: String,
+      default: 'rai'
+    },
     amount: {
       type: Number,
       default: 1
     },
-    onSuccess: {
+    onPayment: {
       type: Function,
       default: function (data) {
-        console.log('RaiPayment successful!', data)
+        console.log('Payment successful!', data)
+      }
+    },
+    onToken: {
+      type: Function,
+      default: function (data) {
+        console.log('Payment Started!', data.token)
       }
     }
   },
@@ -33,13 +43,17 @@ export default {
       this.reset()
       this.initialize()
     },
+    currency () {
+      this.reset()
+      this.initialize()
+    },
     address () {
       this.reset()
       this.initialize()
     }
   },
   mounted () {
-    this.id = 'raivue__payment-' + this._uid
+    this.id = 'nanovue__payment-' + this._uid
     const _this = this
     setTimeout(function () {
       _this.initialize()
@@ -55,7 +69,8 @@ export default {
           amount: this.amount
         },
         // Handle successful payments
-        onPayment: this.onSuccess
+        onPayment: this.onPayment,
+        onToken: this.onToken
       }, '#' + this.id)
     },
     reset () {

@@ -1,5 +1,5 @@
 /*!
- * raivue v0.1.5
+ * raivue v0.1.8
  * (c) 2018 Josh Porter
  * Released under the MIT License.
  */
@@ -70,158 +70,34 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(5),
+  __webpack_require__(2),
   /* template */
-  __webpack_require__(8),
+  __webpack_require__(5),
   /* styles */
   null,
   /* scopeId */
   null,
   /* moduleIdentifier (server only) */
-  "888460f2"
+  "44d7d366"
 )
-Component.options.__file = "/Users/jporter/code/raivue/src/RaiPayment.vue"
+Component.options.__file = "/Users/Ty/Downloads/raivue/src/NanoPayment.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] RaiPayment.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] NanoPayment.vue: functional components are not supported with templates, they should use render functions.")}
 
 module.exports = Component.exports
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-function injectStyle (ssrContext) {
-var i
-  __webpack_require__(7)
-}
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(4),
-  /* template */
-  __webpack_require__(9),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  "1a5c8061"
-)
-Component.options.__file = "/Users/jporter/code/raivue/src/RaiDonation.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] RaiDonation.vue: functional components are not supported with templates, they should use render functions.")}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 !function(root, factory) {
@@ -7797,7 +7673,7 @@ module.exports = Component.exports
 //# sourceMappingURL=brainblocks.js.map
 
 /***/ }),
-/* 4 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7807,123 +7683,37 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _RaiPayment = __webpack_require__(0);
-
-var _RaiPayment2 = _interopRequireDefault(_RaiPayment);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-  name: 'RaiDonation',
-  components: { RaiPayment: _RaiPayment2.default },
-  props: {
-    label: {
-      type: String,
-      default: 'Donate'
-    },
-    address: {
-      type: String,
-      required: true
-    },
-    onSuccess: {
-      type: Function,
-      default: function _default(data) {
-        console.log('RaiDonation successful!', data);
-      }
-    }
-  },
-  data: function data() {
-    return {
-      id: null,
-      currency: 'xrb',
-      amount: 0.25,
-      donations: [1, 3, 5, 10]
-    };
-  },
-
-  computed: {
-    raiAmount: function raiAmount() {
-      if (this.amount === '') {
-        return 1;
-      } // set to 1 rai when blank
-      if (this.currency === 'xrb') {
-        return this.amount * 1000000;
-      } else {
-        return this.amount;
-      }
-    },
-    validAmount: function validAmount() {
-      if (this.raiAmount > 0 && this.raiAmount <= 5000000) {
-        return true;
-      }
-    }
-  },
-  mounted: function mounted() {
-    this.id = 'raivue__donation-' + this._uid;
-  },
-
-  methods: {
-    testSuccess: function testSuccess(data) {
-      console.log(data);
-    }
-  }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _brainblocks = __webpack_require__(3);
+var _brainblocks = __webpack_require__(1);
 
 var brainblocks = _interopRequireWildcard(_brainblocks);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 exports.default = {
-  name: 'RaiPayment',
+  name: 'nanoPayment',
   props: {
     address: {
       type: String,
       required: true
     },
+    currency: {
+      type: String,
+      default: 'rai'
+    },
     amount: {
       type: Number,
       default: 1
     },
-    onSuccess: {
+    onPayment: {
       type: Function,
       default: function _default(data) {
-        console.log('RaiPayment successful!', data);
+        console.log('Payment successful!', data);
+      }
+    },
+    onToken: {
+      type: Function,
+      default: function _default(data) {
+        console.log('Payment Started!', data.token);
       }
     }
   },
@@ -7938,13 +7728,17 @@ exports.default = {
       this.reset();
       this.initialize();
     },
+    currency: function currency() {
+      this.reset();
+      this.initialize();
+    },
     address: function address() {
       this.reset();
       this.initialize();
     }
   },
   mounted: function mounted() {
-    this.id = 'raivue__payment-' + this._uid;
+    this.id = 'nanovue__payment-' + this._uid;
     var _this = this;
     setTimeout(function () {
       _this.initialize();
@@ -7961,7 +7755,8 @@ exports.default = {
           amount: this.amount
         },
         // Handle successful payments
-        onPayment: this.onSuccess
+        onPayment: this.onPayment,
+        onToken: this.onToken
       }, '#' + this.id);
     },
     reset: function reset() {
@@ -7974,7 +7769,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 6 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7984,19 +7779,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _RaiPayment = __webpack_require__(0);
+var _NanoPayment = __webpack_require__(0);
 
-var _RaiPayment2 = _interopRequireDefault(_RaiPayment);
-
-var _RaiDonation = __webpack_require__(2);
-
-var _RaiDonation2 = _interopRequireDefault(_RaiDonation);
+var _NanoPayment2 = _interopRequireDefault(_NanoPayment);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function install(Vue) {
-  Vue.component(_RaiPayment2.default.name, _RaiPayment2.default);
-  Vue.component(_RaiDonation2.default.name, _RaiDonation2.default);
+  Vue.component(_NanoPayment2.default.name, _NanoPayment2.default);
 }
 
 // Install by default if using the script tag
@@ -8005,79 +7795,115 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 exports.default = install;
-// const version = '__VERSION__'
-// // Export all components too
-// export {
-//   RaiPayment,
-//   version
-// }
 
 /***/ }),
-/* 7 */
+/* 4 */
 /***/ (function(module, exports) {
 
-// empty (null-loader)
+/* globals __VUE_SSR_CONTEXT__ */
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
 
 /***/ }),
-/* 8 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "raivue__payment",
+    staticClass: "nanovue__payment",
     attrs: {
       "id": _vm.id
     }
   }, [])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "raivue__donation",
-    attrs: {
-      "id": _vm.id
-    }
-  }, [_vm._ssrNode("<div class=\"raivue__donation_custom\">", "</div>", [_vm._ssrNode("<span class=\"label\">" + _vm._ssrEscape("\n      " + _vm._s(_vm.label) + "\n    ") + "</span> <input type=\"text\"" + (_vm._ssrAttr("value", (_vm.amount))) + " class=\"raivue__donation_input\"> "), _c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.currency),
-      expression: "currency"
-    }],
-    staticClass: "raivue__donation_select",
-    on: {
-      "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.currency = $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-      }
-    }
-  }, [_c('option', {
-    attrs: {
-      "value": "xrb"
-    }
-  }, [_vm._v("XRB")]), _vm._v(" "), _c('option', {
-    attrs: {
-      "value": "rai"
-    }
-  }, [_vm._v("Rai")])])], 2), _vm._ssrNode(" "), (_vm.validAmount) ? _c('RaiPayment', {
-    attrs: {
-      "address": _vm.address,
-      "amount": _vm.raiAmount,
-      "onSuccess": _vm.onSuccess
-    }
-  }) : _c('div', {
-    staticClass: "raivue__error"
-  }, [_vm._v("\n    Amount 0.000001 and 5 XRB.\n  ")])], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
