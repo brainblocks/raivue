@@ -1,6 +1,6 @@
 {
   "name": "raivue",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A Vue.js plugin for accepting Nano payments using Brainblocks",
   "author": "Josh Porter <joshporter1@gmail.com>",
   "keywords": [
@@ -133,6 +133,11 @@
     "url": "https://github.com/brainblocks/raivue/issues"
   },
   "homepage": "https://github.com/brainblocks/raivue#readme",
-  "license": "Apache 2.0",
+  "licenses": [
+    {
+      "type": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
   "dependencies": {}
 }

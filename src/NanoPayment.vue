@@ -6,7 +6,7 @@
 import * as brainblocks from '../lib/brainblocks/dist/brainblocks'
 
 export default {
-  name: 'nanoPayment',
+  name: 'NanoPayment',
   props: {
     address: {
       type: String,
