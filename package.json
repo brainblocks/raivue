@@ -1,6 +1,6 @@
 {
   "name": "raivue",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A Vue.js plugin for accepting Nano payments using Brainblocks",
   "author": "Josh Porter <joshporter1@gmail.com>",
   "keywords": [

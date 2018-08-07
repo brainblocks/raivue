@@ -1,5 +1,5 @@
 /*!
- * raivue v0.1.9
+ * raivue v0.1.10
  * (c) 2018 Josh Porter
  * Released under the MIT License.
  */
@@ -87,9 +87,9 @@ var Component = __webpack_require__(4)(
   /* scopeId */
   null,
   /* moduleIdentifier (server only) */
-  "133227e2"
+  "71315047"
 )
-Component.options.__file = "/Users/storm/projects/raivue/src/NanoPayment.vue"
+Component.options.__file = "/Users/jporter/code/raivue/src/NanoPayment.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NanoPayment.vue: functional components are not supported with templates, they should use render functions.")}
 
