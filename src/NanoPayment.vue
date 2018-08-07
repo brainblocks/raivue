@@ -65,7 +65,7 @@ export default {
         // Pass in payment options
         payment: {
           destination: this.address,
-          currency: 'rai',
+          currency: this.currency,
           amount: this.amount
         },
         // Handle successful payments
