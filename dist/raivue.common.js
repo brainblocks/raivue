@@ -1,5 +1,5 @@
 /*!
- * raivue v0.1.8
+ * raivue v0.1.9
  * (c) 2018 Josh Porter
  * Released under the MIT License.
  */
@@ -87,9 +87,9 @@ var Component = __webpack_require__(4)(
   /* scopeId */
   null,
   /* moduleIdentifier (server only) */
-  "71315047"
+  "133227e2"
 )
-Component.options.__file = "/Users/jporter/code/raivue/src/NanoPayment.vue"
+Component.options.__file = "/Users/storm/projects/raivue/src/NanoPayment.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NanoPayment.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -7690,7 +7690,7 @@ var brainblocks = _interopRequireWildcard(_brainblocks);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 exports.default = {
-  name: 'nanoPayment',
+  name: 'NanoPayment',
   props: {
     address: {
       type: String,
@@ -7751,7 +7751,7 @@ exports.default = {
         // Pass in payment options
         payment: {
           destination: this.address,
-          currency: 'rai',
+          currency: this.currency,
           amount: this.amount
         },
         // Handle successful payments
