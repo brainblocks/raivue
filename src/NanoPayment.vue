@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import * as brainblocks from '../lib/brainblocks/dist/brainblocks'
+import * as brainblocks from 'brainblocks'
 
 export default {
   name: 'NanoPayment',
@@ -61,17 +61,20 @@ export default {
   },
   methods: {
     initialize () {
-      brainblocks.Button.render({
-        // Pass in payment options
-        payment: {
-          destination: this.address,
-          currency: this.currency,
-          amount: this.amount
+      brainblocks.Button.render(
+        {
+          // Pass in payment options
+          payment: {
+            destination: this.address,
+            currency: this.currency,
+            amount: this.amount
+          },
+          // Handle successful payments
+          onPayment: this.onPayment,
+          onToken: this.onToken
         },
-        // Handle successful payments
-        onPayment: this.onPayment,
-        onToken: this.onToken
-      }, '#' + this.id)
+        '#' + this.id,
+      )
     },
     reset () {
       document.getElementById(this.id).innerHTML = ''

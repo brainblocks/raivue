@@ -1,6 +1,6 @@
 {
   "name": "raivue",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A Vue.js plugin for accepting Nano payments using Brainblocks",
   "author": "Josh Porter <joshporter1@gmail.com>",
   "keywords": [
@@ -36,8 +36,7 @@
     "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js --single-run",
     "dev": "webpack-dashboard -- webpack-dev-server --config build/webpack.config.dev.js --open",
     "dev:coverage": "cross-env BABEL_ENV=test karma start test/karma.conf.js",
-    "prepare": "npm run submodules:update && yon run build",
-    "submodules:update": "git submodule update --init --recursive"
+    "prepare": "yon run build"
   },
   "lint-staged": {
     "*.{vue,jsx,js}": [
@@ -139,5 +138,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   ],
-  "dependencies": {}
+  "dependencies": {
+    "brainblocks": "^1.0.16"
+  }
 }
